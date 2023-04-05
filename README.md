@@ -41,8 +41,8 @@ COMING SOON
 
 ### Built With
 
-* [Expo](https://docs.expo.dev/) React Native Framework
-* [React Native](https://reactnative.dev/docs/environment-setup) JavaScript framework by **Meta**
+* [Expo](https://docs.expo.dev/) | A free and open-source platform for developing mobile applications using React Native.
+* [React Native](https://reactnative.dev/docs/environment-setup) | an open-source mobile application development framework that allows developers to build native mobile applications for iOS, Android, and other platforms using JavaScript and React.
 
 
 <!-- GETTING STARTED -->
@@ -86,4 +86,3 @@ This project use `npm` but you can switch to `yarn`
 
 Linkedln - [@Patrick Gip](https://www.linkedin.com/in/patrickgip94/)
 Email - GipPatrick94@gmail.com
-
