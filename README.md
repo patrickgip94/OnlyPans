@@ -1,3 +1,4 @@
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -30,9 +31,14 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![enter image description here](https://i.imgur.com/zdc8aOJ.png)
+![Logo created by Patrick Gip](https://i.imgur.com/zdc8aOJ.png)
 
-COMING SOON
+<h6>*Logo created by Patrick Gip*</h6>
+ 
+
+***OnlyPans is a OnlyFan clone***. OnlyPans is a cutting-edge app designed specifically for chefs who want to sell their recipes and tutorial videos to a broader audience. This app serves as an innovative platform that connects chefs with food enthusiasts who are eager to learn new cooking techniques, discover unique flavors, and experiment with new ingredients.
+
+Through OnlyPans, chefs can offer their followers exclusive access to their recipe collections and tutorial videos by setting up a subscription-based service. This means that fans can sign up to receive regular updates and access to new recipes and tutorials, while chefs can earn a steady income from their creations.
 
 
 ##
@@ -40,8 +46,8 @@ COMING SOON
 
 ### Built With
 
-* [Expo](https://docs.expo.dev/) React Native Framework
-* [React Native](https://reactnative.dev/docs/environment-setup) JavaScript framework by **Meta**
+* [Expo](https://docs.expo.dev/) | A free and open-source platform for developing mobile applications using React Native.
+* [React Native](https://reactnative.dev/docs/environment-setup) | an open-source mobile application development framework that allows developers to build native mobile applications for iOS, Android, and other platforms using JavaScript and React.
 
 
 <!-- GETTING STARTED -->
