@@ -33,7 +33,7 @@
 ## About The Project
 ![Logo created by Patrick Gip](https://i.imgur.com/zdc8aOJ.png)
 
-*Logo created by Patrick Gip*
+<h6>*Logo created by Patrick Gip*</h6>
  
 
 ***OnlyPans is a OnlyFan clone***. OnlyPans is a cutting-edge app designed specifically for chefs who want to sell their recipes and tutorial videos to a broader audience. This app serves as an innovative platform that connects chefs with food enthusiasts who are eager to learn new cooking techniques, discover unique flavors, and experiment with new ingredients.
