@@ -1,11 +1,16 @@
 // UTILITIES
 import { useRouter, useSearchParams } from 'expo-router';
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet, SafeAreaView, Image, Pressable } from 'react-native'
+import { useState } from 'react';
 
 // DUMMY DATA
 import users from '../../assets/data/users';
 
+// ICONS
+import { Ionicons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+
 const ProfilePage = () => {
+  const [isSubscribed, setIsSubscribed] = useState(false);
   const router = useRouter();
   const { id } = useSearchParams();
 
@@ -17,11 +22,133 @@ const ProfilePage = () => {
 
 
   return (
-    <View style={{ marginTop: 100 }}>
-      <Text>Profile page: {user.name} </Text>
-      <Text onPress={() => router.back()}>Go back</Text>
+    <View>
+      <ImageBackground source={{ uri: user.coverImage }} style={styles.cover}>
+        <View style={styles.overlay} />
+
+        <SafeAreaView style={styles.bannerView}>
+          <Ionicons
+            onPress={() => router.back()}
+            name="arrow-back"
+            size={28}
+            color='white'
+            style={{ marginRight: 10, }}
+          />
+
+          <View style={{ marginTop: 10 }}>
+            <Text style={styles.userName}>
+              {user.name}
+            </Text>
+            <Text style={{ color: 'white' }}>1.4K Posts · 64.3K Likes · 15.3K Pans</Text>
+          </View>
+        </SafeAreaView>
+
+      </ImageBackground>
+
+      <View style={{ padding: 10, }}>
+        <View style={styles.userImageSection}>
+          <Image src={user.avatar} style={styles.avatar} />
+          <Ionicons
+            name="chatbox-ellipses-outline"
+            size={24}
+            color='#00AFF0'
+            style={styles.iconImage}
+          />
+          <FontAwesome5
+            name="star"
+            size={24}
+            color='#00AFF0'
+            style={styles.iconImage}
+          />
+          <FontAwesome
+            name="share-square-o"
+            size={24}
+            color='#00AFF0'
+            style={styles.iconImage}
+          />
+        </View>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginVertical: 5, }}>{user.name}</Text>
+        <Text style={{ color: 'gray', marginBottom: 10, }}>@{user.handle}</Text>
+        <Text style={{ lineHeight: 20 }}>{user.bio}</Text>
+
+        <Text style={{ color: 'gray', marginTop: 20, fontWeight: 'bold' }}>SUBSCRIPTION</Text>
+
+        <Pressable
+          onPress={() => setIsSubscribed(!isSubscribed)}
+          style={[
+            styles.button,
+            { backgroundColor: isSubscribed ? 'white' : '#00AFF0' }]}
+        >
+          <Text style={[styles.buttonText, { color: isSubscribed ? '#00AFF0' : 'white' }]}>
+            {isSubscribed ? 'SUBSCRIBED' : 'SUBSCRIBE'}
+          </Text>
+          <Text style={[styles.buttonText, { color: isSubscribed ? '#00AFF0' : 'white' }]}>
+            {user.subscriptionPrice === 0
+              ? "FOR FREE"
+              : `$${user.subscriptionPrice} / month`}
+          </Text>
+        </Pressable>
+      </View>
     </View>
   )
 }
 
 export default ProfilePage;
+
+const styles = StyleSheet.create({
+  button: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    borderColor: "gainsboro",
+    padding: 15,
+    paddingHorizontal: 20,
+    borderRadius: 50,
+    marginVertical: 10,
+  },
+  buttonText: {
+    color: "#00AFF0",
+    fontWeight: '600',
+  },
+  cover: {
+    height: 200,
+    width: '100%',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0,0.6)',
+  },
+  userName: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: '500',
+    marginBottom: 5,
+  },
+  bannerView: {
+    marginHorizontal: 20,
+    marginTop: 40,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+    borderColor: 'white',
+    borderWidth: 3,
+    marginRight: 20,
+  },
+  userImageSection: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+    marginTop: -60,
+    paddingRight: 20,
+  },
+  iconImage: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 10,
+    paddingTop: 10,
+  }
+})

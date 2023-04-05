@@ -2,18 +2,18 @@ export default [
   {
     id: '1',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png',
-    name: 'Elon Husk',
-    handle: 'elonhusk',
-    bio: 'hello',
+    name: 'Elon Wario',
+    handle: 'elonwario',
+    bio: "Hello, I'm Chef Elon Wario who is a culinary genius with a passion for using only the finest and freshest ingredients to create delectable dishes that tantalize the taste buds.",
     subscriptionPrice: 0,
   },
   {
     id: '2',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg',
     name: 'Jeff Pezo',
@@ -24,7 +24,7 @@ export default [
   {
     id: '3',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/biahaze.jpg',
     name: 'Biahaze',
@@ -35,7 +35,7 @@ export default [
   {
     id: '4',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png',
     name: 'Elon',
@@ -46,7 +46,7 @@ export default [
   {
     id: '5',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/graham.jpg',
     name: 'Graham',
@@ -57,7 +57,7 @@ export default [
   {
     id: '6',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/5.jpeg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg',
     name: 'Jeff',
@@ -68,7 +68,7 @@ export default [
   {
     id: '7',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/6.jpg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
     name: 'Vadim',
@@ -79,7 +79,7 @@ export default [
   {
     id: '8',
     coverImage:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/7.jpeg',
+      'https://i.imgur.com/Kkl52pT.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
     name: 'Vadim',
