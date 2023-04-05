@@ -30,7 +30,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![enter image description here](https://i.imgur.com/zdc8aOJ.png)
+![Logo created by Patrick Gip](https://i.imgur.com/zdc8aOJ.png)
+ 
 
 COMING SOON
 
@@ -85,3 +86,4 @@ This project use `npm` but you can switch to `yarn`
 
 Linkedln - [@Patrick Gip](https://www.linkedin.com/in/patrickgip94/)
 Email - GipPatrick94@gmail.com
+
