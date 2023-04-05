@@ -14,6 +14,7 @@ export default function Page() {
       <FlatList
         data={users}
         renderItem={({ item }) => <UserCard user={item} />}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
