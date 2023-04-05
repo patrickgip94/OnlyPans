@@ -1,9 +1,7 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
-import users from "../assets/data/users";
 
-const user = users[0];
+function UserCard({ user }) {
 
-function UserCard() {
   return (
     <ImageBackground source={{ uri: user.coverImage }} style={styles.userCard}>
       {/* OVERLAY FOR IMAGE BACKGROUND */}
@@ -35,7 +33,7 @@ export default UserCard;
 
 const styles = StyleSheet.create({
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
     ...StyleSheet.absoluteFillObject,
   },
   userCard: {
@@ -45,6 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     borderRadius: 10,
     overflow: 'hidden',
+    marginVertical: 5,
   },
   userImage: {
     width: 100,

@@ -1,14 +1,20 @@
 // Utilities
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 
 // Components
-import UserCard from "../components/UserCard";
+import UserCard from "../src/components/UserCard";
+
+// DATA - TEMP
+import users from "../assets/data/users";
 
 
 export default function Page() {
   return (
     <View style={styles.container}>
-      <UserCard />
+      <FlatList
+        data={users}
+        renderItem={({ item }) => <UserCard user={item} />}
+      />
     </View>
   );
 }

@@ -5,8 +5,8 @@ export default [
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png',
-    name: 'Elon',
-    handle: 'elon',
+    name: 'Elon Husk',
+    handle: 'elonhusk',
     bio: 'hello',
     subscriptionPrice: 0,
   },
@@ -16,8 +16,8 @@ export default [
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg',
-    name: 'Jeff',
-    handle: 'jeff',
+    name: 'Jeff Pezo',
+    handle: 'jeffpezo',
     bio: 'hello',
     subscriptionPrice: 4.99,
   },
