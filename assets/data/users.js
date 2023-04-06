@@ -2,7 +2,7 @@ export default [
   {
     id: '1',
     coverImage:
-      'https://i.imgur.com/Kkl52pT.png',
+      'https://i.imgur.com/dkvy0QP.png',
     avatar:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png',
     name: 'Elon Wario',
