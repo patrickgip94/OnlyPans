@@ -5,34 +5,36 @@ import { Link } from "expo-router";
 function UserCard({ user }) {
 
   return (
-    <Link href={`/user/${user.id}`} asChild>
-      <Pressable>
-        <ImageBackground source={{ uri: user.coverImage }} style={styles.userCard}>
-          {/* OVERLAY FOR IMAGE BACKGROUND */}
-          <View style={styles.overlay} />
-          {/* IMAGE */}
-          <Image
-            src={user.avatar}
-            style={styles.userImage}
-          />
-          {/* NAME & HANDLE */}
-          <View>
-            <Text
-              style={{
-                color: 'white',
-                fontSize: 22,
-                fontWeight: '500',
-                marginBottom: 5,
-              }}
-            >
-              {user.name}
-            </Text>
-            <Text style={{ color: 'white' }}>@{user.handle}</Text>
+    <View>
+      <Link href={`/user/${user.id}`} asChild>
+        <Pressable>
+          <ImageBackground source={{ uri: user.coverImage }} style={styles.userCard}>
+            {/* OVERLAY FOR IMAGE BACKGROUND */}
+            <View style={styles.overlay} />
+            {/* IMAGE */}
+            <Image
+              src={user.avatar}
+              style={styles.userImage}
+            />
+            {/* NAME & HANDLE */}
+            <View>
+              <Text
+                style={{
+                  color: 'white',
+                  fontSize: 22,
+                  fontWeight: '500',
+                  marginBottom: 5,
+                }}
+              >
+                {user.name}
+              </Text>
+              <Text style={{ color: 'white' }}>@{user.handle}</Text>
 
-          </View>
-        </ImageBackground>
-      </Pressable>
-    </Link>
+            </View>
+          </ImageBackground>
+        </Pressable>
+      </Link>
+    </View>
   )
 }
 
