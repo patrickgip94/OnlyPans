@@ -1,11 +1,65 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
+import { Entypo, AntDesign, Foundation } from '@expo/vector-icons'
+import { useState } from 'react'
+import FoundationFloatingText from '../components/FoundationIcon'
 
-const Post = () => {
+const Post = ({ post }) => {
+  const [iconName, setIconName] = useState('hearto')
+
+  const handleIcon = () => {
+    if (iconName === 'hearto') {
+      setIconName('heart')
+    } else {
+      setIconName('hearto')
+    }
+  }
   return (
-    <View>
-      <Text>Post</Text>
+    <View style={{ marginVertical: 15, }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', padding: 5, }}>
+        <Image
+          src={post.User.avatar}
+          style={{
+            width: 50,
+            aspectRatio: 1,
+            borderRadius: 50,
+            marginRight: 10,
+          }}
+        />
+        <View>
+          <Text style={{ fontWeight: '600', fontSize: 16, marginBottom: 3, }}>{post.User.name}</Text>
+          <Text style={{ color: 'gray' }}>@{post.User.handle}</Text>
+        </View>
+
+        <View style={{ marginLeft: 'auto', flexDirection: 'row', alignItems: 'center' }}>
+          <Text style={{ marginRight: 5, color: 'gray', }}>3 hours ago</Text>
+          <Entypo name="dots-three-horizontal" size={18} color='gray' />
+        </View>
+      </View>
+
+      <Text style={{ margin: 10, lineHeight: 18, }}>{post.text}</Text>
+      <Image
+        src={post.image}
+        style={{
+          width: '100%',
+          aspectRatio: 1,
+        }}
+      />
+
+      <View style={{ margin: 10, flexDirection: 'row', alignItems: 'center' }}>
+        <AntDesign
+          name={iconName}
+          size={20}
+          color="#00AFF0"
+          onPress={handleIcon}
+          style={{
+            marginRight: 10,
+          }}
+        />
+        <FoundationFloatingText />
+      </View>
+      <Text style={{ fontWeight: '500', marginHorizontal: 10 }}>{post.likes} Likes</Text>
     </View>
   )
 }
 
-export default Post
+export default Post;
