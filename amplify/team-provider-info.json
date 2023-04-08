@@ -10,6 +10,11 @@
       "StackName": "amplify-onlypans-staging-213659",
       "StackId": "arn:aws:cloudformation:us-west-1:576952654623:stack/amplify-onlypans-staging-213659/53fc8830-d58c-11ed-b9b5-027748fbc259",
       "AmplifyAppId": "dgtrc9x02x113"
+    },
+    "categories": {
+      "auth": {
+        "OnlyPans": {}
+      }
     }
   }
 }
