@@ -48,6 +48,7 @@ Through OnlyPans, chefs can offer their followers exclusive access to their reci
 
 * [Expo](https://docs.expo.dev/) | A free and open-source platform for developing mobile applications using React Native.
 * [React Native](https://reactnative.dev/docs/environment-setup) | an open-source mobile application development framework that allows developers to build native mobile applications for iOS, Android, and other platforms using JavaScript and React.
+* [AWS - Amplify](https://aws.amazon.com/amplify/) | AWS Amplify is a development platform that provides a set of tools and services to help developers build scalable and secure cloud-powered web and mobile applications quickly and easily.
 
 
 <!-- GETTING STARTED -->
