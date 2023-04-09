@@ -1,6 +1,9 @@
 import { View, Text, SafeAreaView, TextInput, StyleSheet, Button, Image } from 'react-native'
 import { useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
+import { DataStore } from 'aws-amplify';
+import { Post } from '../src/models';
+import { useAuthenticator } from '@aws-amplify/ui-react-native';
 
 // ICON
 import { Feather, Ionicons } from '@expo/vector-icons';
@@ -10,10 +13,19 @@ const NewPost = () => {
   const [text, setText] = useState('');
   const [image, setImage] = useState('');
 
+  const { user } = useAuthenticator()
+
   const router = useRouter();
 
-  const onPost = () => {
-    console.warn("Post", text)
+  const onPost = async () => {
+    console.warn("Post:", text)
+    await DataStore.save(
+      new Post({
+        text,
+        likes: 0,
+        userID: user.attributes.sub,
+      })
+    );
 
     setText('')
   }

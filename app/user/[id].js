@@ -3,14 +3,11 @@ import { useSearchParams } from 'expo-router';
 import { Text, StyleSheet, FlatList, View } from 'react-native'
 import { useEffect, useState } from 'react';
 import { DataStore } from 'aws-amplify';
-import { User } from '../../src/models';
+import { User, Post as PostModel } from '../../src/models';
 
 // COMPONENT
 import UserProfileHeader from '../../src/components/UserProfileHeader';
 import Post from '../../src/components/Post';
-
-// DUMMY DATA
-import posts from '../../assets/data/posts';
 
 // ICON
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -18,13 +15,15 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 const ProfilePage = () => {
   const [user, setUser] = useState();
+  const [posts, setPosts] = useState([]);
   const [isSubscribed, setIsSubscribed] = useState(false)
 
   const { id } = useSearchParams();
 
   useEffect(() => {
-    DataStore.query(User, id).then(setUser)
-  }, [id])
+    DataStore.query(User, id).then(setUser);
+    DataStore.query(PostModel, (post) => post.userID.eq(id)).then(setPosts);
+  }, [id]);
 
 
   if (!user) {

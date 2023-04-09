@@ -1,10 +1,23 @@
 import { View, Text, Image } from 'react-native'
-import { Entypo, AntDesign, Foundation } from '@expo/vector-icons'
-import { useState } from 'react'
+import { Entypo, AntDesign } from '@expo/vector-icons'
+import { useEffect, useState } from 'react'
 import FoundationFloatingText from '../components/FoundationIcon'
+import { User } from '../models'
+import { DataStore, Storage } from 'aws-amplify'
 
 const Post = ({ post }) => {
+  const [user, setUser] = useState();
   const [iconName, setIconName] = useState('hearto')
+
+  useEffect(() => {
+    DataStore.query(User, post.userID).then(setUser)
+  })
+
+  useEffect(() => {
+    if (post.image) {
+      Storage.length(post.image).then(setImageUri);
+    }
+  }, [post.image])
 
   const handleIcon = () => {
     if (iconName === 'hearto') {
@@ -17,7 +30,7 @@ const Post = ({ post }) => {
     <View style={{ marginVertical: 15, }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', padding: 5, }}>
         <Image
-          src={post.User.avatar}
+          src={user?.avatar}
           style={{
             width: 50,
             aspectRatio: 1,
@@ -26,8 +39,8 @@ const Post = ({ post }) => {
           }}
         />
         <View>
-          <Text style={{ fontWeight: '600', fontSize: 16, marginBottom: 3, }}>{post.User.name}</Text>
-          <Text style={{ color: 'gray' }}>@{post.User.handle}</Text>
+          <Text style={{ fontWeight: '600', fontSize: 16, marginBottom: 3, }}>{user?.name}</Text>
+          <Text style={{ color: 'gray' }}>@{user?.handle}</Text>
         </View>
 
         <View style={{ marginLeft: 'auto', flexDirection: 'row', alignItems: 'center' }}>
@@ -37,13 +50,10 @@ const Post = ({ post }) => {
       </View>
 
       <Text style={{ margin: 10, lineHeight: 18, }}>{post.text}</Text>
-      <Image
-        src={post.image}
-        style={{
-          width: '100%',
-          aspectRatio: 1,
-        }}
-      />
+
+      {post.image && (
+        <Image src={post.image} style={{ width: '100%', aspectRatio: 1 }} />
+      )}
 
       <View style={{ margin: 10, flexDirection: 'row', alignItems: 'center' }}>
         <AntDesign
