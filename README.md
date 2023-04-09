@@ -47,7 +47,9 @@ Through OnlyPans, chefs can offer their followers exclusive access to their reci
 
 
 ##
-
+*Future project*
+- Ability to upload avatar images and banner image.
+- Dynamic like and subscribe functionality.
 
 
 ### Built With
