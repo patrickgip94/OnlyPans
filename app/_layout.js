@@ -1,11 +1,23 @@
 import { Stack } from 'expo-router';
 import { API, Amplify, Hub } from 'aws-amplify';
 import awsconfig from '../src/aws-exports';
-import { Authenticator } from '@aws-amplify/ui-react-native';
+import { Authenticator, useTheme } from '@aws-amplify/ui-react-native';
 import { useEffect } from 'react';
-import { KeyboardAvoidingView, Image, StyleSheet, View } from 'react-native';
+import { Image, KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native';
+
 
 Amplify.configure(awsconfig);
+
+const MyAppHeader = () => {
+  const {
+    tokens: { space, fontSizes },
+  } = useTheme();
+  return (
+    <View>
+      <Image source={{ uri: "https://i.imgur.com/ZYitfgM.png" }} style={styles.logoImage} resizeMode='contain' />
+    </View>
+  );
+};
 
 const CreateUserMutation = `
 mutation createUser($input: CreateUserInput!) {
@@ -18,6 +30,7 @@ mutation createUser($input: CreateUserInput!) {
   }
 }
 `;
+
 
 export default function RootLayout() {
   useEffect(() => {
@@ -39,6 +52,7 @@ export default function RootLayout() {
           query: CreateUserMutation,
           variables: { input: newUser },
         });
+
       }
     });
 
@@ -47,6 +61,7 @@ export default function RootLayout() {
       removeListener();
     };
   }, []);
+
 
   return (
     <KeyboardAvoidingView
@@ -57,10 +72,7 @@ export default function RootLayout() {
       style={{ flex: 1 }}
     >
       <Authenticator.Provider>
-        <View style={styles.container}>
-          <Image src="https://i.imgur.com/ZYitfgM.png" resizeMode='contain' style={styles.logoImage} />
-        </View>
-        <Authenticator>
+        <Authenticator Header={MyAppHeader}>
           <Stack screenOptions={{ headerShown: false }} />
         </Authenticator>
       </Authenticator.Provider>
@@ -69,17 +81,10 @@ export default function RootLayout() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: -150,
-    marginTop: -100,
-  },
   logoImage: {
-    flex: 1,
     width: '100%',
-    aspectRatio: 0.9,
-    marginTop: 150
+    aspectRatio: 0.85,
+    marginTop: -150,
+    marginBottom: -100,
   }
 })
