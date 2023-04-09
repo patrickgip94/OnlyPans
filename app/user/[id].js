@@ -1,14 +1,15 @@
 // UTILITIES
 import { useSearchParams } from 'expo-router';
 import { Text, StyleSheet, FlatList, View } from 'react-native'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { DataStore } from 'aws-amplify';
+import { User } from '../../src/models';
 
 // COMPONENT
 import UserProfileHeader from '../../src/components/UserProfileHeader';
 import Post from '../../src/components/Post';
 
 // DUMMY DATA
-import users from '../../assets/data/users';
 import posts from '../../assets/data/posts';
 
 // ICON
@@ -16,11 +17,15 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 
 const ProfilePage = () => {
+  const [user, setUser] = useState();
   const [isSubscribed, setIsSubscribed] = useState(false)
 
   const { id } = useSearchParams();
 
-  const user = users.find(u => u.id === id)
+  useEffect(() => {
+    DataStore.query(User, id).then(setUser)
+  }, [id])
+
 
   if (!user) {
     return <Text>User was not found!</Text>

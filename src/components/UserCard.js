@@ -28,7 +28,7 @@ function UserCard({ user }) {
               >
                 {user.name}
               </Text>
-              <Text style={{ color: 'white' }}>@{user.handle}</Text>
+              <Text style={{ color: 'white', fontWeight: '600' }}>@{user.handle}</Text>
 
             </View>
           </ImageBackground>
@@ -42,7 +42,7 @@ export default UserCard;
 
 const styles = StyleSheet.create({
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
     ...StyleSheet.absoluteFillObject,
   },
   userCard: {
