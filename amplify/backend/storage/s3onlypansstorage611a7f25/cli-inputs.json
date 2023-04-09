@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3onlypansstorage611a7f25",
+  "bucketName": "onlypans-storage-611a7f25",
+  "policyUUID": "f08b84c4",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
