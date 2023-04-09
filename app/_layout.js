@@ -1,10 +1,9 @@
 import { Stack } from 'expo-router';
-import { API, Amplify, DataStore, Hub } from 'aws-amplify';
+import { API, Amplify, Hub } from 'aws-amplify';
 import awsconfig from '../src/aws-exports';
 import { Authenticator } from '@aws-amplify/ui-react-native';
 import { useEffect } from 'react';
-import { User } from '../src/models';
-import { KeyboardAvoidingView } from 'react-native';
+import { KeyboardAvoidingView, Image, StyleSheet, View } from 'react-native';
 
 Amplify.configure(awsconfig);
 
@@ -58,6 +57,9 @@ export default function RootLayout() {
       style={{ flex: 1 }}
     >
       <Authenticator.Provider>
+        <View style={styles.container}>
+          <Image src="https://i.imgur.com/ZYitfgM.png" resizeMode='contain' style={styles.logoImage} />
+        </View>
         <Authenticator>
           <Stack screenOptions={{ headerShown: false }} />
         </Authenticator>
@@ -65,3 +67,19 @@ export default function RootLayout() {
     </KeyboardAvoidingView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: -150,
+    marginTop: -100,
+  },
+  logoImage: {
+    flex: 1,
+    width: '100%',
+    aspectRatio: 0.9,
+    marginTop: 150
+  }
+})

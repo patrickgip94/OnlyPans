@@ -27,6 +27,7 @@ const Post = ({ post }) => {
       setIconName('hearto')
     }
   }
+
   return (
     <View style={{ marginVertical: 15, }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', padding: 5, }}>
