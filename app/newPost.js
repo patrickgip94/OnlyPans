@@ -1,9 +1,10 @@
 import { View, Text, SafeAreaView, TextInput, StyleSheet, Button, Image } from 'react-native'
 import { useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
-import { DataStore } from 'aws-amplify';
+import { DataStore, Storage } from 'aws-amplify';
 import { Post } from '../src/models';
 import { useAuthenticator } from '@aws-amplify/ui-react-native';
+import * as Crypto from 'expo-crypto';
 
 // ICON
 import { Feather, Ionicons } from '@expo/vector-icons';
@@ -19,15 +20,33 @@ const NewPost = () => {
 
   const onPost = async () => {
     console.warn("Post:", text)
+    const imageKey = await uploadImage();
+
     await DataStore.save(
       new Post({
         text,
         likes: 0,
         userID: user.attributes.sub,
+        image: imageKey,
       })
     );
 
-    setText('')
+    setText('');
+    setImage('');
+  }
+
+  async function uploadImage() {
+    try {
+      const response = await fetch(image);
+      const blob = await response.blob();
+      const fileKey = `${Crypto.randomUUID()}.png`;
+      await Storage.put('fileKey', blob, {
+        contentType: 'image/jpeg' // contentType is optional 
+      });
+      return fileKey;
+    } catch (err) {
+      console.log('Error uploading file:', err)
+    }
   }
 
   const pickImage = async () => {
@@ -69,8 +88,7 @@ const NewPost = () => {
         <Feather onPress={pickImage} name="image" size={24} color="gray" />
       </View>
 
-      {image && <Image src={image} style={{ width: '100%', aspectRatio: 1, marginBottom: 10, }} />}
-
+      {image && <Image src={image} style={{ width: '60%', aspectRatio: 1, marginBottom: 10, }} />}
       <Button title='Post' onPress={onPost} />
     </SafeAreaView>
   )

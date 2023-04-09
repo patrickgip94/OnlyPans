@@ -7,6 +7,7 @@ import { DataStore, Storage } from 'aws-amplify'
 
 const Post = ({ post }) => {
   const [user, setUser] = useState();
+  const [imageUri, setImageUri] = useState();
   const [iconName, setIconName] = useState('hearto')
 
   useEffect(() => {
@@ -15,9 +16,9 @@ const Post = ({ post }) => {
 
   useEffect(() => {
     if (post.image) {
-      Storage.length(post.image).then(setImageUri);
+      Storage.get(post.image).then(setImageUri);
     }
-  }, [post.image])
+  }, [post.image]);
 
   const handleIcon = () => {
     if (iconName === 'hearto') {
@@ -51,8 +52,8 @@ const Post = ({ post }) => {
 
       <Text style={{ margin: 10, lineHeight: 18, }}>{post.text}</Text>
 
-      {post.image && (
-        <Image src={post.image} style={{ width: '100%', aspectRatio: 1 }} />
+      {imageUri && (
+        <Image src={imageUri} style={{ width: '100%', aspectRatio: 1 }} />
       )}
 
       <View style={{ margin: 10, flexDirection: 'row', alignItems: 'center' }}>
