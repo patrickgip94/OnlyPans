@@ -43,7 +43,7 @@ Through OnlyPans, chefs can offer their followers exclusive access to their reci
 
 <div align='center'>
 <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGIxZGU5OWVjNGQ1NWQzMGYyMmZhNmRiNTZkM2MwZTg2YjY1ZDMzYSZjdD1n/GJ9omEXdDo9ImK2rgZ/giphy.gif" width="350"/>
-<img src="https://i.imgur.com/bB49rXr.mp4" width="350" />
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk1YzBmNmRlOWQzNDJjMTZmZDNlNDdiYjkwNGYzNmFiZmRmMjgzZSZjdD1n/8TytQXyhPKkvoDdTi9/giphy.gif" width="350" />
 </div>
 
 
