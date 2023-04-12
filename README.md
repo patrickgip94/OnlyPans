@@ -42,8 +42,7 @@
 Through OnlyPans, chefs can offer their followers exclusive access to their recipe collections and tutorial videos by setting up a subscription-based service. This means that fans can sign up to receive regular updates and access to new recipes and tutorials, while chefs can earn a steady income from their creations.
 
 <div align='center'>
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGIxZGU5OWVjNGQ1NWQzMGYyMmZhNmRiNTZkM2MwZTg2YjY1ZDMzYSZjdD1n/GJ9omEXdDo9ImK2rgZ/giphy.gif" width="350"/>
-<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk1YzBmNmRlOWQzNDJjMTZmZDNlNDdiYjkwNGYzNmFiZmRmMjgzZSZjdD1n/8TytQXyhPKkvoDdTi9/giphy.gif" width="350" />
+<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmE1YzdkNzgxYzE3MzJkNTcyY2FmMDY4Y2VjMzBkYTRhNzE4MTkxMCZjdD1n/GhAjO7EYTziPyFiaSE/giphy.gif" width="350"/>
 </div>
 
 
